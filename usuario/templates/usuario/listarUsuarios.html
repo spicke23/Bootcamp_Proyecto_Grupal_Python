@@ -1,0 +1,24 @@
+{%extends "home/layout2.html"%}   
+{% block content %}
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+<h1 class="text text-danger">Listado de usuarios </h1>
+
+<div class="form-group">
+    
+    {% for u in usu2 %}
+    <ul class="list-group">
+    
+      <li class="list-group-item">{{u.username}} </li>
+    
+    </ul>
+    {% endfor %}
+  
+  </div>
+ 
+
+</div>
+</div>
+
+
+{% endblock content%}

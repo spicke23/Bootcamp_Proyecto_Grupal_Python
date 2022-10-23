@@ -1,0 +1,39 @@
+
+{%extends "home/layout2.html"%}   
+{% block content %}
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <h1>Listado sub-categoria   <a href="{% url 'subcategoria-create' %}" class="btn btn-primary btn-circle btn-lg">
+          <i class="bi bi-plus-circle-fill"></i></a></h1>
+     
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Sub-Categoria</th>
+                <th>Categoria</th>
+             
+              
+              </tr>
+            </thead>
+            <tbody>
+          {% for s in subcategoria %}
+                 
+              <tr>
+                <td>{{s.id}}</td>
+                <td>{{s.nombre}}</td>
+                <td>{{s.categoria}}</td>
+            
+
+                
+             </tr>
+            
+           {% endfor %}
+           
+        </tbody>
+      </table>
+
+
+    </div>
+</div>
+{% endblock content%}

@@ -1,0 +1,17 @@
+{% extends "home/layout2.html"%}
+{%block content%}
+<h1>Eliminar comentario </h1>
+<div class="content-section">
+  <form method="POST">
+    {%csrf_token%}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4"></legend>
+      <h2> ¿Estas seguro que quieres elminar la publicación? "{{object.titulo}}"</h2>
+    </fieldset>
+    <div class="form-group">
+        <button class="btn btn-outline-danger"  type="submit">Eliminar</button>
+        <a class="btn btn-outline-secondary" href="{% url 'post-detail' object.id %}"> Cancelar </a>
+      </div>
+  </form>
+</div>
+{%endblock%}

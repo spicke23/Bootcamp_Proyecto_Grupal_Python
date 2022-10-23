@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Te lo vendo</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+      
+        <script src="https://kit.fontawesome.com/21b5f4a282.js" crossorigin="anonymous"></script>
+       </head>
+<body>
+    <header class="mb-4">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <!-- Image and text -->
+            <nav class="navbar">
+                <a class="navbar-brand" href="{% url 'Home'%}">
+                <img src="{% static 'img/logotelovendo.svg' %}"  height="30" class="d-inline-block align-top" alt="">
+                                </a>
+            </nav>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'Home'%}"><i class="bi bi-house-door-fill"></i></a>
+                </li>
+                <li class="nav-item dropdown navbar-dark bg-primary">
+                  <a class="nav-link dropdown-toggle navbar-dark bg-primary" href="#" id="navbarScrollingDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-bookmarks-fill"></i>
+                  </a>
+                  <ul class="dropdown-menu navbar-dark bg-primary" aria-labelledby="navbarScrollingDropdown">
+                    <li><a class="dropdown-item bg-primary text-white" href="{% url 'producto-listado' %}">
+                      Productos</a></li>
+                      
+             </ul>
+                </li>
+              
+              
+              </ul>
+              <ul class="navbar-nav my-2 my-lg-0">
+                <li class="nav-item ">
+                  <a class="nav-link mr-sm-2" href="{% url 'crear-usu-django' %}"><i class="bi bi-file-earmark-medical-fill"></i></a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link mr-sm-2" href="#"> 
+                    <i class="bi bi-telephone-fill"></i>
+                  
+                  </a>
+                </li>
+                
+                <li class="nav-item ">
+                  <a class="nav-link mr-sm-2" href="#"> 
+                    <span class='badge badge-warning' id='lblCartCount'> {{valor}} </span> 
+                    <i class="bi bi-cart-fill"></i></a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link mr-sm-2" href="{% url 'login'%}"><i class="bi bi-people-fill bi-sm"></i></a>
+                </li>
+            
+            
+              
+                
+              </ul>
+          
+
+             
+            </div>
+          </nav>
+    </header>
+
+    <main class="container bg-light">
+    
+        {% block content %}{%endblock%}
+     
+    </main>
+
+    <footer class="bg-primary mt-4 text-center text-white">
+      <div id="contenedor"> 
+        <i class="bi bi-facebook"></i> <i class="bi bi-instagram"></i> <i class="bi bi-twitter"></i> -  Te lo vendo
+
+      </div>
+      
+  </footer>
+  <div class="modal fade" id="miModal" data-backdrop="static">
+    <div class="modal-dialog">
+      <div class="modal-content">
+       <div class="modal-header bg-primary text-white">
+        Bienvenido
+       </div>
+        <div class="modal-body">
+          <h4> Te lo Vendo </h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <!-- <script src="{% static 'js/app.js' %}"></script> -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

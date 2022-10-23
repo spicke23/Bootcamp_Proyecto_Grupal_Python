@@ -1,0 +1,26 @@
+
+{%extends "home/layout2.html"%}   
+{% block content %}
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <h1>Nueva Sub-Categoria     <a href="#" class="btn btn-primary btn-circle btn-lg">
+          <i class="bi bi-arrow-counterclockwise"></i></a></h1>
+     
+        <div class="content-sectiocrearn">
+          <form method="POST">
+            {%csrf_token%}
+            <fieldset class="form-group">
+              <legend class="border-bottom mb-4"></legend>
+              {% load crispy_forms_tags%}
+              {{form|crispy}}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-primary" formmethod="post" type="submit">Guardar</button>
+              </div>
+          </form>
+        </div>
+
+
+    </div>
+</div>
+{% endblock content%}

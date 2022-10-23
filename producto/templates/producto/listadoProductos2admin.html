@@ -1,0 +1,37 @@
+
+
+
+{%extends "home/layout2.html"%}   
+{% block content %}
+
+
+<h1>Listado de productos 
+  <a href="{% url 'producto-nuevo' %}" class="btn btn-primary btn-circle btn-lg"><i class="bi bi-plus-circle-fill"></i></a></h1>
+<hr>
+<div class="row">
+         
+        {%for producto in Productos%}
+      
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="card" >
+                <img class="card-img-top" src="{{ producto.imagen.url }}" alt="Card image cap"  style="width:18rem; height: 18rem; object-fit: cover; ">
+                <div class="card-body">
+                  <h4 class="card-title">{{producto.nombre}}</h4>
+                  <p>ID: {{producto.sku}} - Precio: {{producto.precio}} - Stock: {{producto.cantidad}}</p>
+                <a href="#" class="btn btn-success btn-sm" style="display:inline-block; ">Agregar al carro</a>
+                </div>
+              </div>
+            </div>
+       
+        
+
+        {%endfor%}
+
+      </div>
+          
+
+
+
+
+
+{% endblock content%}

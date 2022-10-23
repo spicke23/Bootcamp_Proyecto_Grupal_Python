@@ -1,0 +1,49 @@
+
+{%extends "home/layout2.html"%}   
+{% block content %}
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <h1>Listado Proveedores   <a href="{% url 'proveedor-create' %}" class="btn btn-primary btn-circle btn-lg">
+          <i class="bi bi-plus-circle-fill"></i></a></h1>
+     
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Rut</th>
+                <th>Nombre</th>
+                <th>Persona Contacto</th>
+                <th>Teléfono</th>
+                <th>Región</th>
+                <th>Comuna</th>
+                <th>Dirección</th>
+                <th>Categoria</th>
+                <th>Sub-Categoria</th>
+              
+              </tr>
+            </thead>
+            <tbody>
+          {% for p in proveedores %}
+                 
+              <tr>
+                <td>{{p.rut}}</td>
+                <td>{{p.nombre}}</td>
+                <td>{{p.personacontacto}}</td>
+                <td>{{p.telefono}}</td>
+                <td>{{p.region}}</td>
+                <td>{{p.comuna}}</td>
+                <td>{{p.direccion}}</td>
+                <td>{{p.categoria}}</td>
+                <td>{{p.subcategoria}}</td>
+
+                
+             </tr>
+            
+           {% endfor %}
+           
+        </tbody>
+      </table>
+
+
+    </div>
+</div>
+{% endblock content%}

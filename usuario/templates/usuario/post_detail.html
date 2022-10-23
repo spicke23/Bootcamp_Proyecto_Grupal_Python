@@ -1,0 +1,33 @@
+
+{%extends "home/layout2.html"%} 
+{% block content%}
+
+
+  <h1>Detalle Comentarios de Telovendo <a href="{% url 'post-create' %}" class="btn btn-primary btn-circle btn-lg">
+    <i class="bi bi-plus-circle-fill"></i></a>
+    <a href="{% url 'post-list' %}" class="btn btn-primary btn-circle btn-lg">
+      <i class="bi bi-arrow-counterclockwise"></i></a>
+  </h1>
+   
+    <div class="card">
+           <h5 class="card-header">
+      
+        <div class="article-metadata ">
+          
+          <small class="text-muted">Autor {{ post.autor|title }}</small>,
+          <small class="text-muted">{{ post.fecha_publicacion }}</small>
+        </div>
+      </h5>
+      <div class="card-body">
+        
+        <h5 class="card-title"><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.titulo|title }}</a></h5>
+        <p class="card-text">{{ post.comentario }}</p>
+  
+      </div>
+    </div>
+    <br>
+  
+
+
+
+{% endblock content%}
